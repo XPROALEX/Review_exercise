@@ -49,4 +49,11 @@ public class Professor {
         this.course = course;
     }
 
+    public void assingGrade(Student student, int grade) {
+        if (grade >= 18) {
+            student.getGrades().add(grade);
+        } else {
+            System.out.println("Sorry , failed exam, you have to repeat it.");
+        }
+    }
 }

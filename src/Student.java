@@ -64,14 +64,14 @@ public class Student {
     }
 
     public double calculateGradeAverage() {
-        if (grades.isEmpty()) {
+        if (grades == null) {
             return 0;
         }
         double sum = 0;
         for (Integer i : grades) {
             sum += i;
         }
-        return sum;
+        return sum / grades.size();
     }
 
     public boolean isExellent() {

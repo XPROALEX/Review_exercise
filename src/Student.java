@@ -63,10 +63,6 @@ public class Student {
         this.grades = grades;
     }
 
-    public String getFullName() {
-        return name + " " + surname;
-    }
-
     public double calculateGradeAverage() {
         if (grades.isEmpty()) {
             return 0;
@@ -79,6 +75,10 @@ public class Student {
     }
 
     public boolean isExellent() {
-        return calculateGradeAverage() >= 28;
+        return calculateGradeAverage() >= 18;
+    }
+
+    public String getFullName() {
+        return name + " " + surname;
     }
 }

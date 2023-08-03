@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Professor {
     private int professorId;
     private String name;
@@ -55,9 +58,14 @@ public class Professor {
 
     public void assingGrade(Student student, int grade) {
         if (grade >= 18) {
-            student.getGrades().add(grade);
+            List<Integer> addGrades = student.getGrades();
+            if (addGrades == null) {
+                addGrades = new ArrayList<>();
+            }
+            addGrades.add(grade);
+            student.setGrades(addGrades);
         } else {
-            System.out.println("Sorry , failed exam, you have to repeat it.");
+            System.out.println(student.getFullName() + " Sorry , failed exam, you have to repeat it.");
         }
     }
 }

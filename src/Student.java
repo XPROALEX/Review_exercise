@@ -63,6 +63,10 @@ public class Student {
         this.grades = grades;
     }
 
+    public String getFullName() {
+        return name + " " + surname;
+    }
+
     public double calculateGradeAverage() {
         if (grades.isEmpty()) {
             return 0;

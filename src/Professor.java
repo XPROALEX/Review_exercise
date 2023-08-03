@@ -49,6 +49,10 @@ public class Professor {
         this.course = course;
     }
 
+    public String getFullName() {
+        return name + " " + surname;
+    }
+
     public void assingGrade(Student student, int grade) {
         if (grade >= 18) {
             student.getGrades().add(grade);

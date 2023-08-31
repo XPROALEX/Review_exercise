@@ -56,18 +56,14 @@ public class Professor {
         return name + " " + surname;
     }
 
-    public void assingGrade(Student student, int grade) {
-        List<Integer> addGrades = student.getGrades();
-        if (addGrades == null) {
-            addGrades = new ArrayList<Integer>();
-            if (grade >= 18) {
-                addGrades.add(grade);
-                student.setGrades(addGrades);
-            } else {
-                addGrades.add(grade);
-                student.setGrades(addGrades);
-                System.out.println(student.getFullName() + " Sorry , failed exam, you have to repeat it.");
-            }
+    public void assignGrade(Student student, int grade) {
+        if (grade >= 18) {
+            List<Integer> addGrades = new ArrayList<>(student.getGrades());
+            addGrades.add(grade);
+            student.setGrades(addGrades);
+        } else {
+            System.out.println(student.getFullName() + " Sorry , failed exam, you have to repeat it.");
         }
+
     }
 }

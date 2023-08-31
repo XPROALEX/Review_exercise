@@ -57,7 +57,9 @@ public class Student {
     }
 
     public List<Integer> getGrades() {
-        return grades;
+        if (grades == null) {
+            return new ArrayList<Integer>();
+        } else return grades;
     }
 
     public void setGrades(List<Integer> grades) {
@@ -69,8 +71,8 @@ public class Student {
             return 0;
         }
         double sum = 0;
-        for (Integer i : grades) {
-            sum += i;
+        for (Integer voti : grades) {
+            sum += voti;
         }
         return sum / grades.size();
     }
